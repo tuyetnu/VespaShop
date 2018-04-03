@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style> 
+#main{ width:500px; height:400px; float:left; border:1px solid blue;}
+#giohang{ width:200px; height:200px; float:right; border:1px solid blue;}
+img{ width:100px; height:100px;}
+</style>
+<script> 
+function store(x){
+	event.dataTransfer.setData("thao",x.id);
+	}
+function tat(){
+	event.preventDefault();
+}
+function get(){
+		var tam=event.dataTransfer.getData("thao");
+		var anh=document.getElementById(tam);
+		var div_cart=event.target;
+		div_cart.appendChild(anh);
+		}
+</script>
+</head>
+
+<body>
+<div id="main" ondragover="tat()" ondrop="get()"> 
+<img src="2.jpg" id="sp1" draggable="true" ondragstart="store(this)"/>
+</div>
+<div id="giohang" ondragover="tat()" ondrop="get()"> </div>
+</body>
+</html>

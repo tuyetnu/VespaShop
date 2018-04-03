@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script> 
+	function demo1()
+	{
+		var t=document.getElementById("d4");					
+		t.style.visibility ="hidden";
+		}
+	function demo2()
+	{
+		var t=document.getElementById("h3");
+		t.style.display="inline-block";
+		
+		}
+		function demo3()
+	{
+		var t=document.getElementById("h3");
+		t.style.display="none";
+		
+		}
+		function demo4(x){
+			var t=document.getElementById("h3");
+			t.style.opacity=x;
+			if(x==0.5)
+			t.style.transform="scale(1.2,1.2)";
+			else 
+			t.style.transform="scale(1,1)";
+			t.style.transition="all 2s";
+			
+			}
+</script>
+<style> 
+	#d1{ width: 300px; height:600px; border:1px solid red; margin:auto;}
+	#d11{ width:100px; height:100px; background:#666; position: relative; left:-50px; top:50px;}
+	#d21{ width:100px; height:100px; background:#666; position: absolute; top:50px; left: 50px; }
+	#d2{ width: 300px; height:600px; border:1px solid red; margin:auto; position: relative;}
+	#d3{ width:100px; height:100px; background:#F00; position:absolute; bottom: 0px;}
+	#d4{ width:100px; height:100px; position:fixed; top:0px; right:0px; background:#0F0}
+	#h1{ width:100px; height:100px; left:100px; position:relative; z-index:1;}
+	#h2{ width:100px; height:100px; z-index:2; position:relative;} 
+	#h3:hover { cursor: pointer;}
+	span:hover{ cursor:pointer;}
+	a{ font-size:25px; margin-right:10px;}
+	a:link { text-decoration:none; background:#999; color:#0CF;}
+	a:hover { background: #F90; color:#C3F;}
+	a:active{ color:#30F;}
+	.abc { width: 50px; height:30px; background:#9F0; color:#F63;}
+	.abc:hover { width:80px; transition: width 1s;}
+</style>
+<body>
+	<div id="d1"> <div id="d11"> </div>
+	</div>
+	<div id="d2"> <div id="d21"> </div>
+	</div>
+	<div id="d3"> </div>
+	<div id="d4"> <span onClick="demo1()">X</span> </div>
+    <img src="anh4.jpg" id="h1"/>
+    <img src="anh2.jg.jpg" id="h2"/>
+    <img src="anh1.jpg" id="h3" onmouseover="demo4(0.5)" onmouseout="demo4(1)"/>
+    <input type="button" value="hien ra" onclick="demo2()"/>
+    <input type="button" value="bien mat" onclick="demo3()"/> <br/>
+    <a href="anh3.jpg">link1</a>
+    <a href="anh4.jpg">link2</a><br/>
+    <div class="abc">link1 </div>
+    <div class="abc"> link2</div>
+    <div class="abc"> link3</div>
+</body>
+</html>

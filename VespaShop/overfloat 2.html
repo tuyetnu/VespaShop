@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<style>
+	body {margin: 0px;}
+#main { width: 100%;
+	height: 700px;
+	border:1px solid black;
+	float: left;
+	z-index: 0;
+	}
+	.cha { width: 200px; height: 200px; border:2px solid red;
+	overflow: hidden;
+	display: inline-block;
+	margin: 5px;
+	}
+	.con {width: 200px; height: 400px;}
+	.con img { width: 200px; height: 200px; }
+	.con div { width: 200px; height: 200px; background-color: #CCC;}
+	.cha:hover .con { transform: translateY(-200px);
+						transition: transform 0.5s;
+	}
+	
+	#header { float: left; width: 100%;
+				height: 60px;
+		background-color: #CCC;
+		z-index: 1;
+		position: relative;
+	}
+	
+	ul.menu > li { display: inline-block; float: left;
+					width: 20%;
+					margin-right: 1%;
+					background-color: #009;
+					color: #FFF;
+					text-align: center;
+					height: 40px;
+					font-size: 20px;
+	} 
+	ul.submenu > li { list-style-type: none;
+					  background-color: yellow;
+	} 
+	ul.submenu {padding-left: 0px; display: none;}
+	li:hover ul {display: block;}
+	#cart { width: 100px; height: 100px; background-color: #CCC;
+			position: fixed; 
+			right: 0px;
+			top: 60px;
+			opacity: 0;
+	}
+	#header li:hover {cursor: pointer;}
+	ul.menu > li:first-child {border-top-left-radius: 10px; border-bottom-left-radius: 10px;}
+	ul.menu > li:last-child {border-top-right-radius: 10px; border-bottom-right-radius: 10px;}
+	#cart table{ border: 1px solid black; width: 100%;}
+	tr:first-child {background-color: #FF0 !important; }
+	tr:nth-child(even) {background-color: #FFC;}
+	tr:nth-child(odd) {background-color: #FFF;}
+	#cart p:first-line {font-style: italic;}
+	#cart p:first-letter { font-size: 25px; font-family: "palatino";}
+</style>
+<script>
+	function show() 
+	{
+		var t=document.getElementById("cart");
+		if (t.style.opacity==0)
+		{
+		t.style.width = "400px";
+		t.style.height = "300px";
+		t.style.opacity = 1;
+		t.style.transition="all 0.5s";
+		}
+	 else unshow();
+	}
+	function unshow() 
+	{   
+		var t=document.getElementById("cart");
+		t.style.width = "100px";
+		t.style.height = "100px";
+		t.style.opacity = 0;
+		t.style.transition="all 0.5s";
+	}
+</script>
+</head>
+
+<body>
+<div id="header">
+	<ul class="menu">
+		<li>Home</li>
+		<li>Products
+			<ul class="submenu">
+				<li>man</li>
+				<li>woman</li>
+				<li>kids</li>
+			</ul>
+		</li>
+		<li>Services
+			<ul class="submenu">
+				<li>shipping</li>
+				<li>abc</li>
+			</ul>
+		</li>
+		<li onClick="show()">Shopping cart</li>
+	</ul>
+</div>
+
+	<div id="main">
+		<div class="cha">
+			<div class="con">
+				<img src="piaggio-vespa-gts-05.png" />
+				<div>
+					ID: P11 <br/>
+					Name: gate<br/>
+					Price: 1000$
+				</div>
+			</div>
+		</div>
+		<div class="cha">
+			<div class="con">
+				<img src="1.jpg" />
+				<div>
+					ID: P12<br/>
+					Name: table<br/>
+					Price: 2000$
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="cart">
+		<table>
+			<caption>Your shopping cart</caption>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>SP111</td>
+				<td>Quan</td>
+				<td>1000$</td>
+			</tr>
+			<tr>
+				<td>SP111</td>
+				<td>Quan</td>
+				<td>1000$</td>
+			</tr>
+			<tr>
+				<td>SP111</td>
+				<td>Quan</td>
+				<td>1000$</td>
+			</tr>
+			<tr>
+				<td>SP111</td>
+				<td>Quan</td>
+				<td>1000$</td>
+			</tr>
+			<tr>
+				<td>SP111</td>
+				<td>Quan</td>
+				<td>1000$</td>
+			</tr>
+		</table>
+		<p>
+			Tong tien can thanh toan:0$<br/>
+			Khuyen mai ...<br/>
+			Thanh vien ...<br/>
+		</p>
+	</div>
+	
+</body>
+</html>

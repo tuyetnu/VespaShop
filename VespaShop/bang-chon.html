@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script> 
+var a=['iphone', 'ipad','ipod'];
+var b=['gallaxy s7','tv','tu lanh','may lanh'];
+function loadProducts(){
+	var t1=document.getElementById("s1");
+	var t2=document.getElementById("s2");
+	var i=t1.selectedIndex;
+	while(t2.length>0)
+	   t2.remove(0);
+	if(i==1){
+		for(var j=0; j<a.length; j++) {
+			var op=document.createElement("option");
+			op.text=a[j];
+			t2.add(op);
+		}
+		}
+	 else if(i==2){
+			for(var j=0; j<b.length; j++) {
+			var op=document.createElement("option");
+			op.text=b[j];
+			t2.add(op);
+			}
+	}
+}
+</script>
+</head>
+
+<body>
+<select id="s1" onchange="loadProducts()">
+<option>Choose a brand </option>
+<option> Apple </option>
+<option> Samsung </option>
+</select>
+<select id="s2"> </select>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style> 
+p{ position:fixed; top:0px; right:0px; }
+
+</style>
+<script> 
+var s="lien he quang cao qua so dien thoai xxx";
+var i=0;
+function chayQC(){
+	var arr=s.split(" ");
+	var t=document.getElementById("qc");
+	t.innerHTML+=arr[i] +" ";
+	i++;
+	if(i>arr.length){
+		i=0;
+		t.innerHTML="";
+		}
+	window.setTimeout("chayQC()", 300);
+	}
+function check(){
+	var tag1=document.getElementById("t1");
+	var mau1=/^([a-zA-Z]+[ ]?)+$/;
+	var tag2=document.getElementById("t2");
+	var mau2=/^[0-9]{10,11}$/;
+	if(tag1.value.match(mau1)==null){
+		window.alert("loi hoten");
+		tag1.focus();
+		tag1.style.backgroundColor='yellow';
+		}
+		else if(tag2.value.match(mau2)==null){
+		window.alert("loi sdt");
+		tag2.focus();
+		tag2.style.backgroundColor='yellow';
+		}
+		else { tag1.style.backgroundColor='white';
+		tag2.style.backgroundColor='white';
+		alert("dang ki thanh cong");}
+	}
+
+</script>
+</head>
+
+<body onload="chayQC()">	
+<p id="qc"> </p>
+hoten <input type="text" id="t1"/> <br />
+sdt <input type="text" id="t2"/> <br />
+<input type="button" value="dangki" onclick="check()"/> 
+
+</body>
+</html>

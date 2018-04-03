@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style> 
+#header{ width:90%; height:55px;; margin-left:5%; background:#F6CEF5; border-radius:11px;}
+#header li{ display:inline-block; margin-right:50px;color:white; padding-bottom: 10px;}
+#a1{ padding-left:450px;}
+.mo{ opacity: 0.6; color:#FFF;}
+.ro{ opacity: 1; color:#FFF;}
+#list{ margin-top:-9px;}
+#end{ width:80%; height:50px; background:#FFF; margin-left:10%; }
+.mo1{ opacity: 0.6; }
+.ro1{ opacity: 1; }
+#end li{ display:inline-block; margin-right:180px; margin-top:10px;}
+#list li:hover{ cursor:pointer;}
+#list2 li:hover{ cursor:pointer;}
+#f1{ margin-left:10%;}
+a.non-textdecoration{
+            color: red;
+            text-decoration: none;
+        }
+#search{ margin-left: 900px; margin-top: 15px;}
+</style>
+</head>
+<script> 
+function change(obj){
+	var thediv=document.getElementById("header");
+	var ul=document.getElementById("list");
+	var list=thediv.getElementsByTagName("li");
+	for (var i=0; i<list.length; i++){
+		list[i].className="mo";
+		}
+		obj.className="ro";
+	}
+	function change1(obj){
+	var thediv=document.getElementById("end");
+	var ul=document.getElementById("list2");
+	var list=thediv.getElementsByTagName("li");
+	for (var i=0; i<list.length; i++){
+		list[i].className="mo1";
+		}
+		obj.className="ro1";
+	}
+	function demo(){
+	var y=window.pageYOffset;
+	var qc=document.getElementById("header");
+	qc.style.transform="translateY(" +(y) +"px)";
+	//qc.style.transition="all 0.1s";
+	qc.style.display="block";
+	}
+	function init() {
+		window.localStorage.setItem(1,"vespa,link-tim-kiem-sp.html");
+		window.localStorage.setItem(2,"xe vespa,link-tim-kiem-sp.html");
+		window.localStorage.setItem(3,"xevespa,link-tim-kiem-sp.html");
+		window.localStorage.setItem(4,"xedacbiet,link-tim-kiem-vespa.html");
+		window.localStorage.setItem(5,"uu dai,link-tim-kiem-chuong-trinh-uu-dai.html");
+		window.localStorage.setItem(6,"uudai,link-tim-kiem-chuong-trinh-uu-dai.html");
+		window.localStorage.setItem(7,"chuongtrinhuudai,link-tim-kiem-chuong-trinh-uu-dai.html");
+		window.localStorage.setItem(8,"chuong trinh uu dai,link-tim-kiem-chuong-trinh-uu-dai.html");
+		window.localStorage.setItem(9,"VESPA LXV 3Vi.e,sp-6.html");
+		window.localStorage.setItem(10,"VESPA LX 3V i.e,sp-7.html");
+		window.localStorage.setItem(11,"VESPA SPRINT ABS,sp-1.html");
+		window.localStorage.setItem(12,"VESPA PRIMAVERA,sp-3.html");
+		window.localStorage.setItem(13,"VESPA PRIMAVERA ABS,sp-2.html");
+		window.localStorage.setItem(14,"GTS SUPER 3V i.e,sp-4.html");
+		window.localStorage.setItem(15,"VESPA PX,sp-5.html");
+		window.localStorage.setItem(16,"spdb,sp-db4.html");
+	}
+	function search() {
+		var flag = 0;
+		var a = document.getElementById("search");
+		var b = a.value;
+		for(var i = 1; i <= 7; i++) {
+		var c = window.localStorage.getItem(i);
+			var arr = c.split(",");
+			var d = arr.indexOf(b);
+			if(d != -1) {
+				window.open(arr[1]);
+				flag = 1;
+			}
+		} if(flag==0)
+		alert("Not found!");
+		
+	}
+</script>
+<body onscroll="demo()" onLoad="init()">
+<div id="header"> 
+  <input id="search" type="text" placeholder="search"/><input id="nut" type="button" value="search" onClick="search()"/>
+  <ul id="list"> 
+      <li class="ro" onmouseover="change(this)"> <a class="non-textdecoration" href="new 1.html" target="myFrame"> TRANG CHỦ </a></li>
+      <li class="mo" onmouseover="change(this)"> <a class="non-textdecoration" href="iframe_spvespa.html" target="myFrame"> SẢN PHẨM VESPA</a></li>
+      <li class="mo" onmouseover="change(this)"> <a class="non-textdecoration" href="chuong-trinh-uu-dai.html" target="myFrame"> CHƯƠNG TRÌNH ƯU ĐÃI</a></li>
+      <li class="mo" onmouseover="change(this)"> <a class="non-textdecoration" href="iframe-bang-gia-phu-kien.html" target="myFrame">BẢN GIÁ PHỤ KIỆN</a></li>
+      <li class="mo" onmouseover="change(this)"> <a class="non-textdecoration" href="LIEN-HE.html" target="myFrame"> LIÊN HỆ</a></li>
+  </ul>
+  
+ </div>
+  <iframe id="f1" src="new 1.html" name="myFrame"style="width:80%; height:1450px; overflow:hidden; border: none" 
+scrolling="auto"></iframe>
+ <a style="display:scroll;position:fixed;bottom:5px;right:5px;" href="#" title="Back to Top"><img src="https://2.bp.blogspot.com/-
+ExomXm9BGFw/UmFqgFo-rFI/AAAAAAAAAE4/JMc1KSveWco/s1600/Top.png"/></a>  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script> 
+var arr=["1.jpg", "2.jpg", "3.jpg"];
+var i=0;
+var timeid;
+function dungQC(){
+    window.clearTimeout(timeid);
+}
+function chayQC() {
+	var anh=document.getElementById("qc");
+	anh.src=arr[i];
+	i++;
+	i=i%3;
+	timeid=window.setTimeout("chayQC()",1000);
+}
+function moQC(anh){
+if(anh.src.lastIndexOf("1.jpg")>0)
+window.open("http://www.google.com");
+else if(anh.src.lastIndexOf("2.jpg")>0)
+window.open("http://www.vnepress.net");
+else 
+window.open("houzz.htlm");
+}
+</script>
+<body onload="chayQC()">
+<img src="1.jpg" id="qc" width="200px" height="200px;" onmouseover="dungQC()" onclick="moQC" onmouseout="chayQC()">
+</body>
+</html>

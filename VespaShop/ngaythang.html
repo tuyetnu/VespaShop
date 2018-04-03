@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script> 
+function loadDate(){
+	var t=new Date(); // lay thoi diem hien hanh
+	var thu=t.getDay();// lay thu 0 la chu nhat
+	var ngay=t.getDate();// lay ngay
+	var thang=t.getMonth()+1;// hamf tra ve tu 0 den 11
+	var nam=t.getFullYear();
+	var tmp=["chu nhat","thu hai","thu ba","thu tu","thu nam","thu sau","thu bay"];
+	var pho=document.getElementById("mydate");
+	pho.innerHTML="hom nay "+ tmp[thu] +" ngay "+ngay+" thang "+thang+" nam "+nam;
+	}
+function inGio(){
+	var t=new Date();
+	var gio=t.getHours();
+	var phut=t.getMinutes();
+	var giay=t.getSeconds();
+	var nut=document.getElementById("clock");
+	nut.value=gio+":"+phut+":"+giay;
+	window.setTimeout("inGio()",1000);
+	}
+</script>
+</head>
+<body onload="loadDate(), inGio()">
+<input type="button" id="clock"/>
+<p id="mydate"> </p>
+</body>
+</html>
